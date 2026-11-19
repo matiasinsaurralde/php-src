@@ -81,12 +81,12 @@ static lxb_css_selector_list_t *dom_parse_selector(
 	lxb_status_t status;
 
 	memset(parser, 0, sizeof(lxb_css_parser_t));
+	memset(selectors, 0, sizeof(lxb_selectors_t));
 	status = lxb_css_parser_init(parser, NULL);
 	if (UNEXPECTED(status != LXB_STATUS_OK)) {
 		return NULL;
 	}
 
-	memset(selectors, 0, sizeof(lxb_selectors_t));
 	status = lxb_selectors_init(selectors);
 	if (UNEXPECTED(status != LXB_STATUS_OK)) {
 		return NULL;
